@@ -6,7 +6,7 @@ function getSyncCommand(sources) {
     return `"${source}"`;
   }).join(' ');
   return [
-    `rsync -Rrltz ${this.verbose ? '-v': ''} ${this.delete ? '--delete': ''} ${this.flags} -e "ssh -p ${this.port}" ${sources} "${this.user}@${this.host}:${this.dest}"`
+    `rsync -Rrltz --stats ${this.verbose ? '-v': ''} ${this.delete ? '--delete': ''} ${this.flags} -e "ssh -p ${this.port}" ${sources} "${this.user}@${this.host}:${this.dest}"`
   ].join('; ');
 }
 

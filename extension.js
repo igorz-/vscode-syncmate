@@ -15,7 +15,7 @@ exports.activate = function activate(context) {
   // if enabled...
   if (config.enabled) {
     // create a logger instance using the output channel
-    const log = new Logger(vscode.window.createOutputChannel('SyncMate'), config.verbose);
+    const log = new Logger(vscode.window.createOutputChannel('SyncMate'), true);
 
     // adjust the excludes
     const excludes = vscode.workspace.getConfiguration('files').exclude;
