@@ -6,7 +6,6 @@ function getSyncCommand(sources) {
     return `"${source}"`;
   }).join(' ');
   return [
-    `export SSH_AUTH_SOCK=$(find /tmp/*launch*/Listeners -user "${this.user}" -type s | head -1)`,
     `rsync -zarR ${this.verbose ? '-v': ''} ${this.flags} -e "ssh -p ${this.port}" ${sources} "${this.user}@${this.host}:${this.dest}"`
   ].join('; ');
 }
