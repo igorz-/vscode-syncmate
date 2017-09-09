@@ -82,6 +82,11 @@
                     "default": false,
                     "description": "Whether or not to sync dirty (unsaved) files"
                 },
+                "syncmate.delete": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Whether or not to delete extra files"
+                },
                 "syncmate.exclude": {
                     "type": [
                         "boolean",
